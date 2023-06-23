@@ -29,7 +29,7 @@ The task involves implementing the following steps:
 
 ## Mockup/Screenshots
 
-![Mockup](https://www.figma.com/proto/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?page-id=581%3A0&node-id=3320-163&viewport=358%2C48%2C0.04&scaling=min-zoom&starting-point-node-id=3320%3A163&show-proto-sidebar=1).
+![Mockup](https://drive.google.com/file/d/1jpn0uroVC4n0kDaOVY7elNqT3AIJnPMW/view?usp=drive_link).
 
 ## Getting Started
 
@@ -38,3 +38,14 @@ Follow these steps to set up and run the project locally:
 1. Clone the repository:
    ```bash
    git clone <repository-url>
+
+2. Install dependencies:
+
+   ```bash
+   cd abz-agency-test-assignment
+   npm install
+
+3. Start the development server:
+
+   ```bash
+   npm start
