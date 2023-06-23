@@ -6,7 +6,7 @@ This is a test assignment for ABZ Agency, which involves working with mockups, R
 
 The task involves implementing the following steps:
 
-1. Working with mockups (HTML/CSS): [Figma Project][(https://www.figma.com/file/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?type=design&node-id=3373-30897&mode=design&t=4ceeXNk25tPUKZ87-0).
+1. Working with mockups (HTML/CSS): [Figma Project](https://www.figma.com/file/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?type=design&node-id=3373-30897&mode=design&t=4ceeXNk25tPUKZ87-0).
    - Implement a single page with a minimized set of styles and components.
 
 2. Working with REST API (GET):
