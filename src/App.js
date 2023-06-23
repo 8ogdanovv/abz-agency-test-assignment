@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button/Button';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         >
           <img src={logo} className="header-link-image" alt="logo" />
         </a>
+
+        <Button title='button'/>
       </header>
     </div>
   );
