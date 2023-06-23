@@ -49,3 +49,5 @@ Follow these steps to set up and run the project locally:
 
    ```bash
    npm start
+
+Note: This test assignment and its materials are provided by ABZ Agency and should not be used for any commercial or non-commercial purposes beyond this test assignment.
