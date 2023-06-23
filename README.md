@@ -29,7 +29,7 @@ The task involves implementing the following steps:
 
 ## Mockup 1024:
 
-![Mockup](https://github.com/vadym4che/abz-agency-test-assignment/blob/main/0203%20-%20One%20page%20-%201024.png).
+![Mockup](https://github.com/vadym4che/abz-agency-test-assignment/blob/main/mockup1024.png).
 
 ## Getting Started
 
