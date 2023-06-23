@@ -1,10 +1,15 @@
 import './App.css';
-import Menu from './components/Menu/Menu.jsx';
+import Upload from './components/Upload/Upload.jsx';
 
 function App() {
+  const handleUpload = (file) => {
+    // Handle the uploaded file here
+    console.log(file);
+  };
+
   return (
     <div className="App">
-      <Menu />
+      <Upload onUpload={handleUpload} showError={true} />
     </div>
   );
 }
