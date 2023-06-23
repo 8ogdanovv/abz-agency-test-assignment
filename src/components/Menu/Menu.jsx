@@ -4,7 +4,7 @@ import './Menu.css';
 
 const Menu = () => {
   return (
-    <header className="header">
+    <div className="menu">
       <img src={logo} width={104} height={26} alt="main logo" className='logo'/>
 
       <div className="buttons">
@@ -12,7 +12,7 @@ const Menu = () => {
 
         <Button title="Sign up" handleClick={() => console.log('clicked')} />
       </div>
-    </header>
+    </div>
   );
 };
 

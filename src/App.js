@@ -1,6 +1,7 @@
 import './App.css';
 import Input from './components/Input/Input.jsx';
 import Menu from './components/Menu/Menu.jsx';
+import Header from './components/Header/Header.jsx';
 
 function App() {
   // const handleUpload = (file) => {
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Menu />
+      <Header />
       <Input
         placeholder={'Input here'}
         showError={true}
