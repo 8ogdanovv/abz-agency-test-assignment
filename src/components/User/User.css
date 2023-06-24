@@ -1,6 +1,14 @@
 .user {
   width: 328px;
   height: 254px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.user-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 .overflow {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './WorkingWithGET.css';
 import User from '../User/User.jsx';
+import Button from './../Button/Button.jsx';
 
 // const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6';
 
@@ -85,7 +86,7 @@ const WorkingWithGET = () => {
   ] = useState(usersFromServer.users);
 
   return (
-    <div className='section users-flex'>
+    <div className='section users-flex mt140'>
       <p className="h1">
         Working with GET request
       </p>
@@ -94,6 +95,8 @@ const WorkingWithGET = () => {
           <User key={user.id} user={user} />
         ))}
       </div>
+
+      <Button title={'Show more'} />
     </div>
   );
 };

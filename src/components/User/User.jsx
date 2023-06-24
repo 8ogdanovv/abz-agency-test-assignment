@@ -31,7 +31,7 @@ const User = ({ user = TEMP }) => {
 
   return (
     <div className='user user-card-grid' style={containerStyle} >
-      <p><img src={photoToDisplay} alt="user photo" /></p>
+      <p><img src={photoToDisplay} alt="user photo" className='user-photo' /></p>
       <p className='p1 overflow'>{ position }</p>
       <p className='p1 overflow'>{ email }</p>
       <p className='p1 overflow'>{ phone }</p>
