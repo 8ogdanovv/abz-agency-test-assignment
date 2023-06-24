@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import defaultPhoto from '../../assets/defaulUser.svg';
 import './User.css';
+import defaultImage from '../../assets/defaulUser.svg';
 
 const TEMP = {
   "id": 16580,
@@ -14,13 +14,14 @@ const TEMP = {
 };
 
 const User = ({ user = TEMP }) => {
-  const [photoToDisplay, setPhotoToDisplay] = useState(defaultPhoto);
-
   const { email, position, phone, photo } = user;
 
-  useEffect(() => {
-    setPhotoToDisplay(photo);
-  }, []);
+  const [imageSrc, setImageSrc] = useState(photo);
+
+  const handleImageError = () => {
+    setImageSrc(defaultImage);
+  };
+
   const containerStyle = {
     display: 'grid',
     gap: '20px',
@@ -31,7 +32,14 @@ const User = ({ user = TEMP }) => {
 
   return (
     <div className='user user-card-grid' style={containerStyle} >
-      <p><img src={photoToDisplay} alt="user photo" className='user-photo' /></p>
+      <p>
+        <img
+          src={imageSrc}
+          alt={position}
+          className='user-photo'
+          onError={handleImageError}
+        />
+      </p>
       <p className='p1 overflow'>{ position }</p>
       <p className='p1 overflow'>{ email }</p>
       <p className='p1 overflow'>{ phone }</p>
