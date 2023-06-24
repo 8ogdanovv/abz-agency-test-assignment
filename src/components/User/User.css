@@ -1,0 +1,18 @@
+.user {
+  width: 328px;
+  height: 254px;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-rows: repeat(1fr, 3);
+  justify-content: center;
+  padding: 20px;
+}

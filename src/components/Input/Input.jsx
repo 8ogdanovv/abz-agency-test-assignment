@@ -55,7 +55,7 @@ const Input = ({
   };
 
   return (
-    <div className={classNames('input-container input-field')}>
+    <div className={classNames('input-container')}>
       <div
         className={classNames('title', { 'error-title': error }, { 'title-focused': focused })}
       >

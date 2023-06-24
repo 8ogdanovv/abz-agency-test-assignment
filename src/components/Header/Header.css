@@ -15,4 +15,11 @@
   display: flex;
   flex-direction: column;
   gap: 21px;
+  width: 328px;
+}
+
+@media (min-width: 768px) {
+  .header-text {
+    width: 380px;
+  }
 }

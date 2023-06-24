@@ -1,0 +1,26 @@
+.users-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  gap: 20px;
+}
+
+.users-flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+@media (min-width: 768px) {
+  .users-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .users-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

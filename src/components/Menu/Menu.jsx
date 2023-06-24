@@ -4,7 +4,7 @@ import './Menu.css';
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu section">
       <img src={logo} width={104} height={26} alt="main logo" className='logo'/>
 
       <div className="buttons">
