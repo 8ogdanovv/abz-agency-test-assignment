@@ -2,8 +2,8 @@ import './App.css';
 import Input from './components/Input/Input.jsx';
 import Menu from './components/Menu/Menu.jsx';
 import Header from './components/Header/Header.jsx';
-// import User from './components/User/User';
 import WorkingWithGET from './components/WorkingWithGET/WorkingWithGET.jsx';
+import WorkingWithPOST from './components/WorkingWithPOST/WorkingWithPOST.jsx';
 
 function App() {
   // const handleUpload = (file) => {
@@ -16,14 +16,14 @@ function App() {
       <Menu />
       <Header />
       <WorkingWithGET />
-
-      <Input
+      <WorkingWithPOST />
+      {/* <Input
         placeholder={'Input here'}
         showError={true}
         errorMessage={'Error message'}
         title={'title'}
         hintMessage={'hint'}
-      />
+      /> */}
     </div>
   );
 }

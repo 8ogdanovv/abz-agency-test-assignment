@@ -9,7 +9,7 @@
 .input, .input-label {
   background-color: var(--bg-color);
   color: #7E7E7E;
-  width: 328px;
+  width: 380px;
   position: relative;
   border: 1px solid #7E7E7E;
   height: 54px;
@@ -55,11 +55,18 @@
 .input-label.error-field::after {
   position: absolute;
   content: '';
-  width: 324px;
-  height: 50px;
+  width: 380px;
+  height: 54px;
   top: 0;
   left: 0;
   border: 2px solid #CB3D40;
   z-index: 3;
   border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .input-label.error-field::after,
+  .input, .input-label {
+    width: 328px;
+  }
 }

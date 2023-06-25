@@ -14,7 +14,7 @@ const TEMP = {
 };
 
 const User = ({ user = TEMP }) => {
-  const { email, position, phone, photo } = user;
+  const { name, email, position, phone, photo } = user;
 
   const [imageSrc, setImageSrc] = useState(photo);
 
@@ -40,6 +40,7 @@ const User = ({ user = TEMP }) => {
           onError={handleImageError}
         />
       </p>
+      <p className='p1 overflow'>{ name }</p>
       <p className='p1 overflow'>{ position }</p>
       <p className='p1 overflow'>{ email }</p>
       <p className='p1 overflow'>{ phone }</p>

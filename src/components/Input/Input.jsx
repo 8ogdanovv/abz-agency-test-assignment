@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import './Input.css';
 
@@ -7,79 +7,49 @@ const Input = ({
   placeholder,
   showError,
   errorMessage,
+  onChange,
+  onBlur,
   hintMessage,
+  value,
 }) => {
-  const [inputValue, setInputValue] = useState('');
   const [filled, setFilled] = useState(false);
   const [focused, setFocused] = useState(false);
-  const [error, setError] = useState(showError);
-
-  const errorEmit = () => {
-    setError(true);
-
-    setTimeout(() => {
-      setError(false);
-    }, 2500);
-  };
 
   const handleInput = (e) => {
-    setInputValue(e.target.value);
+    onChange(e);
   };
 
-  useEffect(() => {
-    if (error) {
-      errorEmit();
-    }
-  }, [error]);
-
-  useEffect(() => {
-    setFilled(inputValue !== '');
-  }, [inputValue]);
-
-  const handleFocus = (e) => {
-    e.preventDefault();
-
+  const handleFocus = () => {
     setFocused(true);
-
-    if (placeholder === inputValue) {
-      setInputValue('');
-    }
   };
 
-  const handleBlur = () => {
+  const handleFieldBlur = () => {
     setFocused(false);
-
-    if (inputValue === '') {
-      setInputValue(placeholder);
-    }
+    setFilled(value !== '');
+    onBlur();
   };
 
   return (
     <div className={classNames('input-container')}>
-      <div
-        className={classNames('title', { 'error-title': error }, { 'title-focused': focused })}
-      >
+      <div className={classNames('title', { 'title-focused': focused })}>
         {title}
       </div>
 
-      <label
-        className={classNames('input-label', { 'error-field': error })}
-      >
+      <label className={classNames('input-label', { 'error-field': (showError && !focused) })}>
         <input
-          className={classNames(
-            'input p1',
-            { filled },
-          )}
+          className={classNames('input p1', { filled })}
           type="text"
-          onChange={handleInput}
-          value={inputValue}
+          value={value}
           placeholder={placeholder}
+          onChange={handleInput}
           onFocus={handleFocus}
-          onBlur={handleBlur}
+          onBlur={handleFieldBlur}
         />
       </label>
-      {error && <p className="error">{errorMessage}</p>}
-      {!error && focused && <p className="hint">{hintMessage}</p>}
+
+      {showError && !focused && <p className="error">{errorMessage}</p>}
+      {focused && <p className="hint">{hintMessage}</p>}
+      {!showError && !focused && <p className="hint">&nbsp;</p>}
     </div>
   );
 };

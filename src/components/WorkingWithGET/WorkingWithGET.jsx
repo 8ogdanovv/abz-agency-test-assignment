@@ -55,7 +55,7 @@ const WorkingWithGET = () => {
   };
 
   return (
-    <div className="section users-flex mt140">
+    <div className="section users-flex block">
       <p className="h1">Working with GET request</p>
       <div className="users-grid">
         {fetchedData.map(user => (
