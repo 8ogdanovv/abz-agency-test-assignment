@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 11px;
   position: relative;
+  align-self: flex-start;
 }
 
 .position {
