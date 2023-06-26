@@ -26,6 +26,7 @@ const InputPhone = ({ phone, setPhone, inputErrors, setInputErrors }) => {
 
   return (
     <Input
+      name='phone'
       title="Phone"
       placeholder="Phone"
       hintMessage="+380XXXXXXXXX"

@@ -49,13 +49,20 @@ const Upload = ({ photo, setPhoto, inputErrors, setInputErrors }) => {
 
   return (
     <div className={classNames('upload-container input-field')}>
-      <label className={classNames('upload-label', {
+      <label htmlFor='photo' className={classNames('upload-label', {
         'error-field': error,
       })}>
         <div className={classNames('label', { filled: filled && !error, 'error-field': error })}>
           Upload
         </div>
-        <input type="file" onChange={handleUpload} aria-label="photo upload" style={{ display: 'none' }} />
+        <input
+          type="file"
+          name='photo'
+          id='photo'
+          onChange={handleUpload}
+          aria-label="photo upload"
+          style={{ display: 'none' }}
+        />
         <div className={classNames('placeholder p1', { filled, 'error-field': error })}>
           {fileName}
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './WorkingWithPOST.css';
 import InputName from '../InputName/InputName';
 import InputEmail from '../InputEmail/InputEmail';
@@ -7,7 +7,7 @@ import SelectPosition from '../SelectPosition/SelectPosition';
 import Upload from '../Upload/Upload';
 import Button from '../Button/Button';
 
-const WorkingWithPOST = () => {
+const WorkingWithPOST = ({ success, setSuccess }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -18,6 +18,8 @@ const WorkingWithPOST = () => {
   const [isSending, setIsSending] = useState(false);
   const [token, setToken] = useState('');
 
+  const formRef = React.useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -25,18 +27,15 @@ const WorkingWithPOST = () => {
 
     setIsSending(true);
 
-    var formData = new FormData();
-    formData.append('position_id', selectedPosition);
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('photo', photo);
-    console.log(name);
-    console.log(email);
-    console.log(phone);
-    console.log(selectedPosition);
-    console.log(photo);
-    
+    const formData = new FormData(formRef.current);
+    formData.set('photo', photo); // Replace the photo field value with the uploaded file
+
+    console.log(formData.get('name'));
+    console.log(formData.get('email'));
+    console.log(formData.get('phone'));
+    console.log(formData.get('position_id'));
+    console.log(formData.get('photo'));
+
     for (const [key, value] of formData.entries()) {
       console.log(key, value);
     }
@@ -46,7 +45,6 @@ const WorkingWithPOST = () => {
       body: formData,
       headers: {
         'Token': token,
-        'Content-Type': 'multipart/form-data', // Set Content-Type header
       },
     })
       .then(function(response) {
@@ -56,6 +54,7 @@ const WorkingWithPOST = () => {
         console.log(data);
         if (data.success) {
           resetForm();
+          setSuccess(true);
         } else {
           // Process server errors
           console.log(formData);
@@ -100,7 +99,7 @@ const WorkingWithPOST = () => {
     formData.append('email', email);
     formData.append('phone', phone);
     formData.append('photo', photo);
-    
+
     for (const [key, value] of formData.entries()) {
       console.log(key, value);
     }
@@ -126,7 +125,12 @@ const WorkingWithPOST = () => {
     <div className="post-user block">
       <p className="h1">Working with POST request</p>
 
-      <form onSubmit={handleSubmit} className="flex-col-g50">
+      <form
+        onSubmit={handleSubmit}
+        className="flex-col-g50"
+        ref={formRef}
+        encType="multipart/form-data"
+      >
         <InputName
           name={name}
           setName={setName}

@@ -41,8 +41,8 @@ const SelectPosition = ({ selectedPosition, setSelectedPosition, inputErrors, se
           <input
             type="radio"
             id={`position_${position.id}`}
-            name="position"
-            value={position.name}
+            name="position_id"
+            value={position.id}
             checked={selectedPosition === position.id}
             onChange={() => handleSelectChange(+position.id)}
             required // Add the required attribute

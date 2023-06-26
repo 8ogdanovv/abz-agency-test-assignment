@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import './Input.css';
 
 const Input = ({
+  name,
   title,
   placeholder,
   showError,
@@ -37,6 +38,7 @@ const Input = ({
 
       <label className={classNames('input-label', { 'error-field': (showError && !focused) })}>
         <input
+          name={name}
           className={classNames('input p1', { filled })}
           type="text"
           value={value}

@@ -26,6 +26,7 @@ const InputEmail = ({ email, setEmail, inputErrors, setInputErrors }) => {
 
   return (
     <Input
+      name='email'
       title="Email"
       placeholder="Email"
       hintMessage="email@example.com"

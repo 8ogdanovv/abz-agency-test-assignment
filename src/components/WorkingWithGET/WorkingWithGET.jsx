@@ -5,8 +5,7 @@ import Button from '../Button/Button';
 
 const API_URL = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
 
-const WorkingWithGET = () => {
-  const [fetchedData, setFetchedData] = useState([]);
+const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [nextPageLink, setNextPageLink] = useState(null);
   const [isFirstPageFetched, setIsFirstPageFetched] = useState(false);

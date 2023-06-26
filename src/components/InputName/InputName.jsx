@@ -26,6 +26,7 @@ const InputName = ({ name, setName, inputErrors, setInputErrors }) => {
 
   return (
     <Input
+      name='name'
       title="Name"
       placeholder="Your name"
       hintMessage={`Example: 'Al Ad-Din'`}
