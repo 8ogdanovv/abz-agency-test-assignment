@@ -13,7 +13,8 @@
 
 .overflow {
   white-space: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
+  line-height: 100%;
   text-overflow: ellipsis;
 }
 

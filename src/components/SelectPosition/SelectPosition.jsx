@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './SelectPosition.css';
 
 const API_URL = 'https://frontend-test-assignment-api.abz.agency/api/v1/positions';
 
@@ -24,7 +25,7 @@ const SelectPosition = ({ selectedPosition, onChange, showError, errorMessage })
     <div className="position-block">
       <p>Select your position:</p>
       {positions.map((position) => (
-        <div key={position.id}>
+        <div key={position.id} className="position">
           <input
             type="radio"
             id={`position_${position.id}`}
@@ -38,6 +39,7 @@ const SelectPosition = ({ selectedPosition, onChange, showError, errorMessage })
         </div>
       ))}
       {showError && <p className="error">{errorMessage}</p>}
+      {!showError && <p className="error">&nbsp;</p>}
     </div>
   );
 };

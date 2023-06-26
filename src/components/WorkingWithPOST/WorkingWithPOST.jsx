@@ -70,8 +70,14 @@ const WorkingWithPOST = () => {
       errors.selectedPosition = 'Position is required';
     }
 
-    if (!photo || photo === null) {
-      errors.photo = 'Photo is required';
+    if (!photo || photo === null || !isValidPhoto(photo)) {
+      if (!photo || photo === null) {
+        errors.photo = 'Photo is required';
+      }
+
+      if (!isValidPhoto(photo)) {
+        errors.photo = 'Photo should be 70 x 70 and up to 5 MB';
+      }
     }
 
     setInputErrors(errors);
@@ -176,11 +182,15 @@ const WorkingWithPOST = () => {
     });
   };
 
+  useEffect(() => {
+    console.log(inputErrors);
+  }, [inputErrors]);
+
   return (
     <div className="post-user block">
       <p className="h1">Working with POST request</p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='flex-col-g50'>
         <Input
           title="Name"
           placeholder="Your name"

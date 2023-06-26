@@ -60,10 +60,10 @@
 .upload-label.error-field::after {
   position: absolute;
   content: '';
-  width: 326px;
-  height: 50px;
-  top: 0;
-  left: 0;
+  width: 380px;
+  height: 54px;
+  top: -1px;
+  left: -1px;
   border: 2px solid #CB3D40;
   border-radius: 4px;
   z-index: 3;
@@ -72,10 +72,10 @@
 .label.error-field::after {
   position: absolute;
   content: '';
-  width: 80px;
-  height: 49px;
-  top: 0;
-  left: 0;
+  width: 84px;
+  height: 53px;
+  top: -1px;
+  left: -1px;
   border: 2px solid #CB3D40;
   border-radius: 4px 0 0 4px;
   z-index: 3;

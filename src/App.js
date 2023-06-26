@@ -17,13 +17,6 @@ function App() {
       <Header />
       <WorkingWithGET />
       <WorkingWithPOST />
-      {/* <Input
-        placeholder={'Input here'}
-        showError={true}
-        errorMessage={'Error message'}
-        title={'title'}
-        hintMessage={'hint'}
-      /> */}
     </div>
   );
 }
