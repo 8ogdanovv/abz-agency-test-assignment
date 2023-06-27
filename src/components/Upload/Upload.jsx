@@ -21,8 +21,8 @@ const Upload = ({ photo, setPhoto, inputErrors, setInputErrors }) => {
         setInputErrors((prevErrors) => {
           const errors = { ...prevErrors };
 
-          if (!isValidPhoto(file)) {
-            errors.photo = 'Photo should be 70 x 70 and up to 5 MB';
+          if (isValidPhoto(file) !== true) {
+            errors.photo = isValidPhoto(file);
           } else {
             delete errors.photo;
           }

@@ -8,9 +8,13 @@ const Menu = () => {
       <img src={logo} width={104} height={26} alt="main logo" className='logo'/>
 
       <div className="buttons">
-        <Button title="Users" handleClick={() => console.log('clicked')} />
+        <a href="#users-page">
+          <Button title="Users" handleClick={() => console.log('clicked')} />
+        </a>
 
-        <Button title="Sign up" handleClick={() => console.log('clicked')} />
+        <a href="#sign-up-page">
+          <Button title="Sign up" handleClick={() => console.log('clicked')} />
+        </a>
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './SelectPosition.css';
 
 const API_URL = 'https://frontend-test-assignment-api.abz.agency/api/v1/positions';
 
-const SelectPosition = ({ selectedPosition, setSelectedPosition, inputErrors, setInputErrors }) => {
-  const [positions, setPositions] = useState([]);
+const SelectPosition = ({ selectedPosition, setSelectedPosition, inputErrors, setInputErrors, positions, setPositions }) => {
 
   const handleSelectChange = (position) => {
     setSelectedPosition(position);

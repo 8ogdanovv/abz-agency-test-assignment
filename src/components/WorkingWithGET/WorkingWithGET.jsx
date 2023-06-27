@@ -24,6 +24,7 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
       setFetchedData(data.users);
       setNextPageLink(data.links.next_url);
       setIsFirstPageFetched(true);
+      console.log(fetchedData);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
@@ -40,6 +41,8 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
 
       setFetchedData(prevData => [...prevData, ...data.users]);
       setNextPageLink(data.links.next_url);
+
+      console.log(fetchedData);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
@@ -54,7 +57,7 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
   };
 
   return (
-    <div className="section users-flex block">
+    <div className="section users-flex block" id="users-page">
       <p className="h1">Working with GET request</p>
       <div className="users-grid">
         {fetchedData.map(user => (

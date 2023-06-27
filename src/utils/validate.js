@@ -21,19 +21,23 @@ export const isValidPhoto = (photo) => {
     const validTypes = ['image/jpeg', 'image/jpg'];
     const validSize = 5; // in MB
 
-    return new Promise((resolve) => {
-      const image = new Image();
-      image.onload = function () {
-        resolve(
-          validTypes.includes(fileType) &&
-            fileSize <= validSize &&
-            image.width >= 70 &&
-            image.height >= 70
-        );
-      };
-      image.src = URL.createObjectURL(photo);
-    });
-  }
+    console.log(fileType);
 
-  return Promise.resolve(false);
+    if (!validTypes.includes(fileType)) {
+      return `Photo should be image/jpeg or 'image/jpg' type`;
+    }
+
+    if (fileSize > validSize) {
+      return 'Photo should not be larger than 5 MB';
+    }
+
+    return true; // No photo provided, consider it as valid
+  }
 };
+
+
+
+
+
+
+

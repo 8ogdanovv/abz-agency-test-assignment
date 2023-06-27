@@ -1,0 +1,20 @@
+.server-error {
+  background-color: #CB3D40;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 328px;
+  height: 54px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(20px);
+}
+
+@media (min-width: 480px) {
+  .server-error {
+    width: 380px;
+  }
+}

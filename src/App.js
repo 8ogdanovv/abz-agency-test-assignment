@@ -14,11 +14,15 @@ function App() {
     <div className="App">
       <Menu />
       <Header />
-      <WorkingWithGET fetchedData={fetchedData} setFetchedData={setFetchedData} />
+      <WorkingWithGET
+        fetchedData={fetchedData}
+        setFetchedData={setFetchedData}
+      />
       {!success ? (
         <WorkingWithPOST
           success={success}
           setSuccess={setSuccess}
+          fetchedData={fetchedData}
           setFetchedData={setFetchedData}
         /> )
       : <Success />}

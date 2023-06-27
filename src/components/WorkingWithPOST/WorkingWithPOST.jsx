@@ -6,8 +6,10 @@ import InputPhone from '../InputPhone/InputPhone';
 import SelectPosition from '../SelectPosition/SelectPosition';
 import Upload from '../Upload/Upload';
 import Button from '../Button/Button';
+import ServerError from '../ServerError/ServerError';
+import getPhotoUrlByUserId from '../../api/getPhotoUrlByUserId';
 
-const WorkingWithPOST = ({ success, setSuccess }) => {
+const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -17,10 +19,12 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [token, setToken] = useState('');
+  const [positions, setPositions] = useState([]);
+  const [serverError, setServerError] = useState('');
 
-  const formRef = React.useRef();
+  const formRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (isSending) return; // Prevent multiple submissions
@@ -40,32 +44,51 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
       console.log(key, value);
     }
 
-    fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Token': token,
-      },
-    })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        console.log(data);
-        if (data.success) {
-          resetForm();
-          setSuccess(true);
-        } else {
-          // Process server errors
-          console.log(formData);
-        }
-        setIsSending(false);
-      })
-      .catch(function(error) {
-        // Process network errors
-        setIsSending(false);
+    try {
+      const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Token': token,
+        },
       });
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (data.success) {
+        setSuccess(true);
+
+        const photoUrl = await getPhotoUrlByUserId(data.user_id); // Fetch the photo URL asynchronously
+
+        const user = {
+          email,
+          id: data.user_id,
+          name,
+          phone,
+          photo: photoUrl, // Use the fetched photo URL
+          position: positions.find((position) => position.id === selectedPosition)?.name || '',
+          position_id: selectedPosition,
+          registration_timestamp: Date.now(),
+        };
+
+        setFetchedData([user, ...fetchedData]);
+        resetForm();
+      } else {
+        // Process server errors
+        console.log(data.message);
+        setServerError(data.message);
+      }
+
+      setIsSending(false);
+    } catch (error) {
+      // Process network errors
+      setIsSending(false);
+      setServerError('Network error occurred. Please try again.');
+    }
   };
+
 
   const resetForm = () => {
     setName('');
@@ -75,10 +98,6 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
     setPhoto(null);
     setInputErrors({});
   };
-
-  useEffect(() => {
-    setIsFormValid(false);
-  }, []);
 
   useEffect(() => {
     if (
@@ -93,6 +112,21 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
       setIsFormValid(true);
     }
 
+    if (
+      name !== '' &&
+      email !== '' &&
+      phone !== '' &&
+      selectedPosition === 0 &&
+      photo !== null
+    ) {
+      setInputErrors((prevErrors) => {
+        const errors = { ...prevErrors };
+        errors.selectedPosition = 'Position is required'
+
+        return errors;
+      });
+    };
+
     var formData = new FormData();
     formData.append('position_id', selectedPosition);
     formData.append('name', name);
@@ -104,9 +138,11 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
       console.log(key, value);
     }
 
-  }, [name, email, phone, selectedPosition, photo, inputErrors]);
+  }, [name, email, phone, selectedPosition, photo]);
 
   useEffect(() => {
+    setIsFormValid(false);
+
     fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
       .then(function(response) {
         return response.json();
@@ -122,7 +158,7 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
   }, []);
 
   return (
-    <div className="post-user block">
+    <div className="post-user block" id="sign-up-page">
       <p className="h1">Working with POST request</p>
 
       <form
@@ -154,6 +190,8 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
           setSelectedPosition={setSelectedPosition}
           inputErrors={inputErrors}
           setInputErrors={setInputErrors}
+          positions={positions}
+          setPositions={setPositions}
         />
         <Upload
           photo={photo}
@@ -171,6 +209,14 @@ const WorkingWithPOST = ({ success, setSuccess }) => {
           />
         )}
       </form>
+
+      {serverError !== '' && (
+        <ServerError
+          serverError={serverError}
+          setServerError={setServerError}
+          timeOut={5555}
+        />
+      )}
     </div>
   );
 };
