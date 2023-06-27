@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import './Upload.css';
 import { isValidPhoto } from '../../utils/validate';
@@ -72,4 +72,4 @@ const Upload = ({ photo, setPhoto, inputErrors, setInputErrors }) => {
   );
 };
 
-export default Upload;
+export default React.memo(Upload);

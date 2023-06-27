@@ -8,6 +8,7 @@ const Button = ({ title, handleClick, disabled }) => {
       className={classNames('button', { disabled })}
       onClick={handleClick}
       disabled={disabled}
+      title={title}
     >
       {title}
     </button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './User.css';
 import defaultImage from '../../assets/defaulUser.svg';
 
@@ -40,12 +40,12 @@ const User = ({ user = TEMP }) => {
           onError={handleImageError}
         />
       </p>
-      <p className='p1 overflow'>{ name }</p>
-      <p className='p1 overflow'>{ position }</p>
-      <p className='p1 overflow'>{ email }</p>
-      <p className='p1 overflow'>{ phone }</p>
+      <p className='p1 overflow' title={name}>{ name }</p>
+      <p className='p1 overflow' title={position}>{ position }</p>
+      <p className='p1 overflow' title={email}>{ email }</p>
+      <p className='p1 overflow' title={phone}>{ phone }</p>
     </div>
   );
 }
 
-export default User
+export default React.memo(User);

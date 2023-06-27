@@ -12,6 +12,7 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
 
   useEffect(() => {
     fetchFirstPage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchFirstPage = async () => {
@@ -24,7 +25,6 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
       setFetchedData(data.users);
       setNextPageLink(data.links.next_url);
       setIsFirstPageFetched(true);
-      console.log(fetchedData);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
@@ -41,8 +41,6 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
 
       setFetchedData(prevData => [...prevData, ...data.users]);
       setNextPageLink(data.links.next_url);
-
-      console.log(fetchedData);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
@@ -74,4 +72,4 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
   );
 };
 
-export default WorkingWithGET;
+export default React.memo(WorkingWithGET);

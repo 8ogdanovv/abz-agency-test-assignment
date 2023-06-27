@@ -34,16 +34,6 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
     const formData = new FormData(formRef.current);
     formData.set('photo', photo); // Replace the photo field value with the uploaded file
 
-    console.log(formData.get('name'));
-    console.log(formData.get('email'));
-    console.log(formData.get('phone'));
-    console.log(formData.get('position_id'));
-    console.log(formData.get('photo'));
-
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-
     try {
       const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
         method: 'POST',
@@ -54,8 +44,6 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
       });
 
       const data = await response.json();
-
-      console.log(data);
 
       if (data.success) {
         setSuccess(true);
@@ -77,7 +65,6 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
         resetForm();
       } else {
         // Process server errors
-        console.log(data.message);
         setServerError(data.message);
       }
 
@@ -134,10 +121,7 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
     formData.append('phone', phone);
     formData.append('photo', photo);
 
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name, email, phone, selectedPosition, photo]);
 
   useEffect(() => {
@@ -152,9 +136,8 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
       })
       .catch(function(error) {
         // Process network errors
+        setServerError('Network error occurred. Please try again.');
       });
-
-    console.log(token);
   }, []);
 
   return (
@@ -221,4 +204,4 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
   );
 };
 
-export default WorkingWithPOST;
+export default React.memo(WorkingWithPOST);

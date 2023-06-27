@@ -16,7 +16,7 @@ const Header = () => {
       </div>
 
       <a href="#sign-up-page">
-          <Button title="Sign up" handleClick={() => console.log('clicked')} />
+          <Button title="Sign up" handleClick={() => console.log('Sign-up Button clicked')} />
       </a>
     </header>
   )

@@ -46,6 +46,7 @@ const Input = ({
           onChange={handleInput}
           onFocus={handleFocus}
           onBlur={handleFieldBlur}
+          title={hintMessage}
         />
       </label>
 
@@ -56,4 +57,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default React.memo(Input);

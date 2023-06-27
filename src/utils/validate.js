@@ -21,8 +21,6 @@ export const isValidPhoto = (photo) => {
     const validTypes = ['image/jpeg', 'image/jpg'];
     const validSize = 5; // in MB
 
-    console.log(fileType);
-
     if (!validTypes.includes(fileType)) {
       return `Photo should be image/jpeg or 'image/jpg' type`;
     }

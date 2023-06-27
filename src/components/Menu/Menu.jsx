@@ -9,11 +9,11 @@ const Menu = () => {
 
       <div className="buttons">
         <a href="#users-page">
-          <Button title="Users" handleClick={() => console.log('clicked')} />
+          <Button title="Users" handleClick={() => console.log('Users Button clicked')} />
         </a>
 
         <a href="#sign-up-page">
-          <Button title="Sign up" handleClick={() => console.log('clicked')} />
+          <Button title="Sign up" handleClick={() => console.log('Sign-up Button clicked')} />
         </a>
       </div>
     </div>
