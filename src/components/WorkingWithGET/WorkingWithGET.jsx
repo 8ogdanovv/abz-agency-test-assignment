@@ -2,6 +2,7 @@ import './WorkingWithGET.css';
 import React, { useEffect, useState } from 'react';
 import User from '../User/User';
 import Button from '../Button/Button';
+import Preloader from '../Preloader/Preloader';
 
 const API_URL = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
 
@@ -64,7 +65,7 @@ const WorkingWithGET = ({ fetchedData, setFetchedData }) => {
       </div>
 
       {isLoading ? (
-        <p>Loading...</p>
+        <Preloader speed={400} />
       ) : (
         nextPageLink && <Button title="Show more" handleClick={handleShowMore} />
       )}

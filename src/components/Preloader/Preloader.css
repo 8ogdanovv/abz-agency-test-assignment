@@ -1,0 +1,23 @@
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform-origin: center;
+  width: min-content;
+  height: min-content;
+  animation: rotation var(--speed) linear infinite;
+}
+
+.spinner-container img {
+  transform: scale(calc(33/48)) translate(0, 0);
+}

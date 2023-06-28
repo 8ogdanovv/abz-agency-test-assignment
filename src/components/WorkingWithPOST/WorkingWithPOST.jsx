@@ -8,6 +8,7 @@ import Upload from '../Upload/Upload';
 import Button from '../Button/Button';
 import ServerError from '../ServerError/ServerError';
 import getPhotoUrlByUserId from '../../api/getPhotoUrlByUserId';
+import Preloader from '../Preloader/Preloader';
 
 const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
   const [name, setName] = useState('');
@@ -125,8 +126,6 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
   }, [name, email, phone, selectedPosition, photo]);
 
   useEffect(() => {
-    setIsFormValid(false);
-
     fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
       .then(function(response) {
         return response.json();
@@ -183,7 +182,7 @@ const WorkingWithPOST = ({ setSuccess, fetchedData, setFetchedData }) => {
           setInputErrors={setInputErrors}
         />
         {isSending ? (
-          <p>Sending...</p>
+          <Preloader />
         ) : (
           <Button
             title="Sign up"
