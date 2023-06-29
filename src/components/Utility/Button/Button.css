@@ -1,0 +1,21 @@
+.button {
+  /* position: relative; */
+  /* z-index: 1; */
+  width: 100px;
+  height: 34px;
+  background-color: var(--primary-color);
+  border-radius: calc(34px / 2);
+  border: none;
+  color:#000000DE;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color:#F4E041DE;
+  cursor: pointer;
+}
+
+.button.disabled {
+  background-color: #B4B4B4;
+  color:#FFFFFFDE;
+}

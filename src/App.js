@@ -1,9 +1,9 @@
 import './App.css';
-import Menu from './components/Menu/Menu.jsx';
-import Header from './components/Header/Header.jsx';
-import WorkingWithGET from './components/WorkingWithGET/WorkingWithGET.jsx';
-import WorkingWithPOST from './components/WorkingWithPOST/WorkingWithPOST.jsx';
-import Success from './components/Success/Success.jsx';
+import Menu from './components/Layout/Menu/Menu.jsx';
+import Header from './components/Layout/Header/Header.jsx';
+import Users from './components/Layout/Users/Users.jsx';
+import SignUp from './components/Layout/SignUp/SignUp.jsx';
+import Success from './components/Utility/Success/Success.jsx';
 import React, { useState } from 'react';
 
 function App() {
@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <Menu />
       <Header />
-      <WorkingWithGET
+      <Users
         fetchedData={fetchedData}
         setFetchedData={setFetchedData}
       />
       {!success ? (
-        <WorkingWithPOST
+        <SignUp
           success={success}
           setSuccess={setSuccess}
           fetchedData={fetchedData}
@@ -30,4 +30,4 @@ function App() {
   );
 }
 
-export default React.memo(App);
+export default App;
