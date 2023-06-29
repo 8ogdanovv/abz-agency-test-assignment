@@ -182,15 +182,13 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
           inputErrors={inputErrors}
           setInputErrors={setInputErrors}
         />
-        {isSending ? (
-          <Preloader />
-        ) : (
-          <Button
-            title="Sign up"
-            // handleClick={handleSubmit}
-            disabled={!isFormValid}
-          />
-        )}
+
+        <Button
+          title="Sign up"
+          disabled={!isFormValid}
+          isLoading={isSending}
+        />
+   
       </form>
 
       {serverError !== '' && (

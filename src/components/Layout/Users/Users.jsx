@@ -26,6 +26,7 @@ const Users = ({ fetchedData, setFetchedData }) => {
       setFetchedData(data.users);
       setNextPageLink(data.links.next_url);
       setIsFirstPageFetched(true);
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
@@ -65,12 +66,14 @@ const Users = ({ fetchedData, setFetchedData }) => {
         ))}
       </div>
 
-      {isLoading ? (
-        <Preloader speed={400} />
-      ) : (
-        nextPageLink && (
-          <Button id="show-more" title="Show more" handleClick={handleShowMore} />
-      ))}
+      {nextPageLink && (
+          <Button
+            id="show-more"
+            title="Show more"
+            handleClick={handleShowMore}
+            isLoading={isLoading}
+          />
+      )}
     </div>
   );
 };

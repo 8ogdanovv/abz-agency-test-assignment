@@ -19,5 +19,5 @@
 }
 
 .spinner-container img {
-  transform: scale(calc(33/48)) translate(0, 0);
+  transform: scale(calc(25/48)) translate(0, 0);
 }

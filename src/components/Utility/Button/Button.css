@@ -8,6 +8,9 @@
   border: none;
   color:#000000DE;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:hover {

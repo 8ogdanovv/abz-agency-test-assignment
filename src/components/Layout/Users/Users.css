@@ -16,8 +16,6 @@
   align-items: center;
   flex-direction: column;
   gap: 50px;
-  max-width: 1170px;
-  width: min-content;
 }
 
 @media (min-width: 768px) {
