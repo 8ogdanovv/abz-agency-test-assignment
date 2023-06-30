@@ -8,13 +8,12 @@
   align-items: center;
 }
 
-.menu-content {
-  width: 1170px;
+.menu-items {
+  width: 100%;
+  max-width: 1170px;
   height: 60px;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -22,7 +21,7 @@
   width: 104px;
 }
 
-.buttons {
+.button-container {
   max-width: 250px;
   flex-shrink: 1;
   display: flex;
@@ -40,18 +39,19 @@
     gap: 0;
   }
 
-  .buttons {
+  .button-container {
     display: flex;
     gap: 10px;
     flex-direction: column;
   }
 
-  p.h1, p.p1.overflow {
+  p.text-title,
+  p.text-body.overflow {
     line-break: anywhere;
-    max-width: 80dvw;
+    max-width: 80vw;
   }
 }
 
 @media (min-width: 360px) and (max-width: 412px) {
-
+  /* Add specific styles for this media query if needed */
 }

@@ -40,7 +40,7 @@ const Input = ({
       <label className={classNames('input-label', { 'error-field': (showError && !focused) })}>
         <input
           name={name}
-          className={classNames('input p1', { filled })}
+          className={classNames('input text-body', { filled })}
           type="text"
           value={value}
           placeholder={placeholder}

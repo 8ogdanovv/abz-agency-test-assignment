@@ -63,7 +63,7 @@ const Upload = ({ photo, setPhoto, inputErrors, setInputErrors }) => {
           aria-label="photo upload"
           style={{ display: 'none' }}
         />
-        <div className={classNames('placeholder p1', { filled, 'error-field': error })}>
+        <div className={classNames('placeholder text-body', { filled, 'error-field': error })}>
           {fileName}
         </div>
       </label>

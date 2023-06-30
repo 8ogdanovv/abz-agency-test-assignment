@@ -148,7 +148,7 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
 
   return (
     <div className="post-user block" id="sign-up-page" >
-      <p className="h1">Working with POST request</p>
+      <p className="text-title">Working with POST request</p>
 
       <form
         onSubmit={handleSubmit}

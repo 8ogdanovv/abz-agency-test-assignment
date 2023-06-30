@@ -8,15 +8,14 @@
 
 .input, .input-label {
   background-color: var(--bg-color);
-  color: #7E7E7E;
+  color: var(--gray-text-color);
   width: 380px;
   position: relative;
-  border: 1px solid #7E7E7E;
+  border: 1px solid var(--gray-text-color);
   height: 54px;
   border-radius: 4px;
   display: flex;
   align-items: center;
-  position: relative;
   align-self: center;
 }
 
@@ -31,7 +30,7 @@
   height: 12px;
   font-size: 12px;
   line-height: 14px;
-  color: var(--grey-text-color);
+  color: var(--gray-text-color);
   width: fit-content;
   padding: 0 2px;
   z-index: 5;
@@ -41,7 +40,7 @@
 }
 
 .error-title {
-  color: #CB3D40;
+  color: var(--error-color);
 }
 
 .title-focused {
@@ -59,7 +58,7 @@
   height: 54px;
   top: 0;
   left: 0;
-  border: 2px solid #CB3D40;
+  border: 2px solid var(--error-color);
   z-index: 3;
   border-radius: 4px;
 }
@@ -68,7 +67,6 @@
   .input-label.error-field::after,
   .input, .input-label {
     width: 328px;
-    /* padding: 0; */
   }
 }
 

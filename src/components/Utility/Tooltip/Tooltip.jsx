@@ -63,7 +63,7 @@ const Tooltip = React.memo(({ children, tooltip }) => {
   }, []);
 
   return (
-    <div className="tooltip-container" style={containerStyle} ref={tooltipRef}>
+    <div className="tooltip-wrapper" style={containerStyle} ref={tooltipRef}>
       {children}
       <div
         className="tooltip"

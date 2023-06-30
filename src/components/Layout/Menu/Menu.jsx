@@ -5,13 +5,13 @@ import Tooltip from '../../Utility/Tooltip/Tooltip';
 
 const Menu = () => (
   <div className="menu">
-    <div className="menu-content">
+    <div className="menu-items">
       <Tooltip tooltip="logo">
         <p style={{ display: 'relative', zIndex: '-1', opacity: '0', marginBottom: '-16px' }}>Logo</p>
         <img src={logo} width={104} height={26} alt="main logo" className='logo' />
       </Tooltip>
 
-      <div className="buttons">
+      <div className="button-container">
         <Tooltip tooltip="Users">
           <a href="#users-page">
             <Button title="Users" handleClick={() => console.log('Users Button clicked')} />

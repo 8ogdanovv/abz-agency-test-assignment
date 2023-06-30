@@ -26,16 +26,16 @@ const User = ({ user }) => {
         <img src={imageSrc} alt="" className='user-photo' onError={handleImageError} />
       </p>
       <Tooltip tooltip={name}>
-        <p className='p1 overflow'>{name}</p>
+        <p className='text-body overflow'>{name}</p>
       </Tooltip>
       <Tooltip tooltip={position}>
-        <p className='p1 overflow'>{position}</p>
+        <p className='text-body overflow'>{position}</p>
       </Tooltip>
       <Tooltip tooltip={email}>
-        <p className='p1 overflow'>{email}</p>
+        <p className='text-body overflow'>{email}</p>
       </Tooltip>
       <Tooltip tooltip={phone}>
-        <p className='p1 overflow'>{phone}</p>
+        <p className='text-body overflow'>{phone}</p>
       </Tooltip>
     </div>
   );

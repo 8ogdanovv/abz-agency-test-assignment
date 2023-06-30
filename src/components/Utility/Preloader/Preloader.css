@@ -13,11 +13,11 @@
   justify-content: center;
   position: relative;
   transform-origin: center;
-  width: min-content;
-  height: min-content;
+  width: fit-content;
+  height: fit-content;
   animation: rotation var(--speed) linear infinite;
 }
 
 .spinner-container img {
-  transform: scale(calc(25/48)) translate(0, 0);
+  transform: scale(0.52083) translate(0, 0);
 }

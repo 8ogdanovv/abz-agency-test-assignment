@@ -10,7 +10,7 @@ const ServerError = ({ serverError, setServerError, timeOut }) => {
   }, []);
 
   return (
-    <div className='server-error p1'>{serverError}</div>
+    <div className='server-error text-body'>{serverError}</div>
   )
 }
 

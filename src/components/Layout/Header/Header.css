@@ -1,8 +1,8 @@
 .header {
   width: 100%;
-  background-image: url('../../../assets/top.png');
   max-width: 1170px;
   min-height: 500px;
+  background-image: url('../../../assets/top.png');
   background-position: center;
   color: white;
   display: flex;
@@ -27,7 +27,7 @@
   }
 }
 
-.header-text {
+.header-content {
   display: flex;
   flex-direction: column;
   gap: 21px;
@@ -35,7 +35,7 @@
 }
 
 @media (min-width: 768px) {
-  .header-text {
+  .header-content {
     width: 380px;
   }
 }

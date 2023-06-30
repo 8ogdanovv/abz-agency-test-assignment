@@ -59,7 +59,7 @@ const Users = ({ fetchedData, setFetchedData }) => {
 
   return (
     <div className="section users-flex block" id="users-page">
-      <p className="h1">Working with GET request</p>
+      <p className="text-title">Working with GET request</p>
       <div className="users-grid">
         {fetchedData.map(user => (
           <User key={user.id} user={user} />

@@ -4,7 +4,7 @@ import './Success.css';
 const Success = () => {
   return (
     <div className='section success block'>
-      <p className="h1">
+      <p className="text-title">
         User successfully registered
       </p>
       <div className="success-picture"></div>

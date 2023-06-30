@@ -34,7 +34,7 @@
   }
 
   .overflow {
-    max-width: 80dvw;
+    max-width: 80vw;
     width: min-content;
   }
 }

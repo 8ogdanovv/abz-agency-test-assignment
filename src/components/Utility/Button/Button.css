@@ -2,9 +2,9 @@
   width: 100px;
   height: 34px;
   background-color: var(--primary-color);
-  border-radius: calc(34px / 2);
+  border-radius: 17px;
   border: none;
-  color:#000000DE;
+  color: #000000DE;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -12,13 +12,13 @@
 }
 
 .button:hover {
-  background-color:#F4E041DE;
+  background-color: #F4E041DE;
   cursor: pointer;
 }
 
 .button.disabled {
   background-color: #B4B4B4;
-  color:#FFFFFFDE;
+  color: #FFFFFFDE;
 }
 
 @media (max-width: 359px) {
