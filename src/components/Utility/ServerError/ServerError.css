@@ -13,7 +13,7 @@
   transform: translateY(20px);
 }
 
-@media (min-width: 480px) {
+@media (min-width: 412px) {
   .server-error {
     width: 380px;
   }

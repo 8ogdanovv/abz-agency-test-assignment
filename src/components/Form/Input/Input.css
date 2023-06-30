@@ -64,9 +64,17 @@
   border-radius: 4px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 412px) {
   .input-label.error-field::after,
   .input, .input-label {
     width: 328px;
+    /* padding: 0; */
+  }
+}
+
+@media (max-width: 359px) {
+  .input-label.error-field::after,
+  .input, .input-label {
+    width: 100%;
   }
 }

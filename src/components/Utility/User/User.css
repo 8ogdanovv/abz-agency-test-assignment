@@ -1,5 +1,5 @@
 .user {
-  width: 370px;
+  width: 328px;
   background-color: white;
   border-radius: 10px;
 }
@@ -19,10 +19,46 @@
 }
 
 .user-card-grid {
+  max-width: 370px;
   display: grid;
   gap: 20px;
   grid-template-rows: repeat(1fr, 3);
   justify-content: center;
-  /* text-align: center; */
+  align-items: center;
   padding: 20px;
+}
+
+@media (max-width: 359px) {
+  .user {
+    width: 90%;
+  }
+
+  .overflow {
+    max-width: 80dvw;
+    width: min-content;
+  }
+}
+
+@media (min-width: 360px) {
+  .user {
+    width: 328px;
+  }
+}
+
+@media (min-width: 680px) {
+  .user {
+    width: 344px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .user {
+    width: 282px;
+  }
+}
+
+@media (min-width: 1170px) {
+  .user {
+    width: 370px;
+  }
 }

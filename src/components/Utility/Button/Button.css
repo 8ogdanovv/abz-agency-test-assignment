@@ -1,6 +1,4 @@
 .button {
-  /* position: relative; */
-  /* z-index: 1; */
   width: 100px;
   height: 34px;
   background-color: var(--primary-color);
@@ -21,4 +19,11 @@
 .button.disabled {
   background-color: #B4B4B4;
   color:#FFFFFFDE;
+}
+
+@media (max-width: 359px) {
+  .button {
+    max-width: 75px;
+    padding: 0;
+  }
 }

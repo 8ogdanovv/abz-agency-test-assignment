@@ -1,16 +1,23 @@
 .position-block {
-  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 11px;
   position: relative;
-  align-self: flex-start;
+  width: 380px;
+  text-align: left;
 }
 
 .position {
-  width: 100%;
+  width: 380px;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  /* align-items: flex-start; */
+  text-align: left;
   gap: 12px;
+}
+
+@media (max-width: 412px) {
+  .position-block, .position {
+    width: 320px;
+    padding: 0;
+  }
 }

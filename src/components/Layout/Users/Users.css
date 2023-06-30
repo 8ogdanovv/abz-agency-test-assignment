@@ -6,6 +6,7 @@
   width: 100%;
   display: grid;
   justify-items: center;
+  justify-content: center;
   align-content: center;
   grid-template-columns: 1;
   gap: 20px;
@@ -16,6 +17,7 @@
   align-items: center;
   flex-direction: column;
   gap: 50px;
+  max-width: min-content;
 }
 
 @media (min-width: 768px) {
@@ -25,7 +27,7 @@
   }
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1024px) {
   .users-grid {
     grid-template-columns: repeat(3, 1fr);
   }

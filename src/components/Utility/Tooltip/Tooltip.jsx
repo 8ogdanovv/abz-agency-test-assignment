@@ -8,6 +8,7 @@ const Tooltip = React.memo(({ children, tooltip }) => {
     display: 'block',
     position: 'relative',
     cursor: 'pointer',
+    maxWidth: 'min-content'
   };
 
   useEffect(() => {
@@ -18,7 +19,6 @@ const Tooltip = React.memo(({ children, tooltip }) => {
 
       setTooltipStyle((prevState) => {
         return {
-          display: 'block',
           position: 'fixed',
           borderRadius: '4px',
           background: 'rgba(0, 0, 0, 0.87)',

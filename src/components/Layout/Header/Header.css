@@ -10,6 +10,21 @@
   gap: 32px;
   align-items: center;
   justify-content: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 380px) {
+  .header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0;
+  }
 }
 
 .header-text {

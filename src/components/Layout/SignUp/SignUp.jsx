@@ -8,8 +8,7 @@ import Upload from '../../Form/Upload/Upload';
 import Button from '../../Utility/Button/Button';
 import ServerError from '../../Utility/ServerError/ServerError';
 import getPhotoUrlByUserId from '../../../api/getPhotoUrlByUserId';
-import Preloader from '../../Utility/Preloader/Preloader';
-import { isValidPhone, isValidEmail, isValidName } from '../../../utils/validate';
+import { isValidPhone, isValidEmail, isValidName, isValidPhoto } from '../../../utils/validate';
 
 const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
   const [name, setName] = useState('');
@@ -116,9 +115,16 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
       errors.photo = 'Photo is required';
     }
 
-    const firstErrorKey = Object.keys(errors)[0]; // Get the first error key
+    if (typeof isValidPhoto(photo) !== 'boolean') {
+      errors.photo = isValidPhoto(photo);
+    }
 
-    setInputErrors(firstErrorKey ? { [firstErrorKey]: errors[firstErrorKey] } : {});
+    console.log(Object.entries(errors))
+
+    // const firstErrorKey = Object.keys(errors)[0]; // Get the first error key
+
+    // setInputErrors(firstErrorKey ? { [firstErrorKey]: errors[firstErrorKey] } : {});
+    setInputErrors(errors);
 
     setIsFormValid(Object.keys(errors).length === 0);
 
