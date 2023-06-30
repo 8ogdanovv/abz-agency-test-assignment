@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import spinner from "../../../assets/spinner.svg";
-import './Preloader.css';
+import "./Preloader.css";
 
 const Preloader = ({ speed }) => {
   const styleBlock = {
-    '--speed': `${speed}ms`,
+    "--speed": `${speed}ms`,
   };
 
   return (

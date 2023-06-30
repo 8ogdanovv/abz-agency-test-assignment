@@ -40,7 +40,6 @@ const Tooltip = React.memo(({ children, tooltip }) => {
         };
       });
 
-      console.log(event.target.textContent);
       setShowTooltip(true);
     };
 

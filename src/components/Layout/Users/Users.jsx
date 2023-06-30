@@ -2,7 +2,6 @@ import './Users.css';
 import React, { useEffect, useState } from 'react';
 import User from '../../Utility/User/User';
 import Button from '../../Utility/Button/Button';
-import Preloader from '../../Utility/Preloader/Preloader';
 
 const API_URL = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
 

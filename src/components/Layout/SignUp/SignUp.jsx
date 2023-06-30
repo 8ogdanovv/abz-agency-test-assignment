@@ -119,10 +119,7 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
       errors.photo = isValidPhoto(photo);
     }
 
-    console.log(Object.entries(errors))
-
     // const firstErrorKey = Object.keys(errors)[0]; // Get the first error key
-
     // setInputErrors(firstErrorKey ? { [firstErrorKey]: errors[firstErrorKey] } : {});
     setInputErrors(errors);
 
