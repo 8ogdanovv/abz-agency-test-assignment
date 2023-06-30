@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/abz-agency-test-assignment/static/css/main.49782bf2.css",
-    "main.js": "/abz-agency-test-assignment/static/js/main.cc8af01d.js",
+    "main.css": "/abz-agency-test-assignment/static/css/main.78a5d9f2.css",
+    "main.js": "/abz-agency-test-assignment/static/js/main.b60b4760.js",
     "static/media/top.png": "/abz-agency-test-assignment/static/media/top.a84a69cbc474ccecac43.png",
     "static/media/success.svg": "/abz-agency-test-assignment/static/media/success.7ae50975d9eaef13fe32.svg",
     "static/media/logo.svg": "/abz-agency-test-assignment/static/media/logo.20a09c8680baa0fdd5eeb0e39b457a1a.svg",
     "static/media/defaulUser.svg": "/abz-agency-test-assignment/static/media/defaulUser.b51651e3062922d061aac30f732816f7.svg",
     "static/media/spinner.svg": "/abz-agency-test-assignment/static/media/spinner.6484447065ee95c082e9b52b2a1f2996.svg",
     "index.html": "/abz-agency-test-assignment/index.html",
-    "main.49782bf2.css.map": "/abz-agency-test-assignment/static/css/main.49782bf2.css.map",
-    "main.cc8af01d.js.map": "/abz-agency-test-assignment/static/js/main.cc8af01d.js.map"
+    "main.78a5d9f2.css.map": "/abz-agency-test-assignment/static/css/main.78a5d9f2.css.map",
+    "main.b60b4760.js.map": "/abz-agency-test-assignment/static/js/main.b60b4760.js.map"
   },
   "entrypoints": [
-    "static/css/main.49782bf2.css",
-    "static/js/main.cc8af01d.js"
+    "static/css/main.78a5d9f2.css",
+    "static/js/main.b60b4760.js"
   ]
 }
