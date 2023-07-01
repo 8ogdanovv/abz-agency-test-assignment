@@ -3,7 +3,7 @@ import "./Button.css";
 import classNames from "classnames";
 import Preloader from "../Preloader/Preloader";
 
-const Button = ({ title, handleClick, disabled, isLoading = false }) => {
+const Button = ({ title, handleClick, disabled, isLoading }) => {
   return (
     <button
       className={classNames("button", { disabled })}
