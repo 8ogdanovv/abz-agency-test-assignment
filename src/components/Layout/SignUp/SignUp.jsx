@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './SignUp.css';
 import InputName from '../../Form/InputName/InputName';
 import InputEmail from '../../Form/InputEmail/InputEmail';
@@ -25,7 +25,16 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
 
   const formRef = useRef();
 
-  const handleSubmit = async (e) => {
+  const resetForm = useCallback(() => {
+    setName('');
+    setEmail('');
+    setPhone('');
+    setSelectedPosition(0);
+    setPhoto(null);
+    setInputErrors({});
+  }, []);
+
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (isSending) return; // Prevent multiple submissions
@@ -75,17 +84,7 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
       setIsSending(false);
       setServerError('Network error occurred. Please try again.');
     }
-  };
-
-
-  const resetForm = () => {
-    setName('');
-    setEmail('');
-    setPhone('');
-    setSelectedPosition(0);
-    setPhoto(null);
-    setInputErrors({});
-  };
+  }, [isSending, photo, token, setSuccess, email, name, phone, positions, selectedPosition, setFetchedData, fetchedData, resetForm]);
 
   useEffect(() => {
     const errors = {};
@@ -119,16 +118,13 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
       errors.photo = isValidPhoto(photo);
     }
 
-    // const firstErrorKey = Object.keys(errors)[0]; // Get the first error key
-    // setInputErrors(firstErrorKey ? { [firstErrorKey]: errors[firstErrorKey] } : {});
     setInputErrors(errors);
 
     setIsFormValid(Object.keys(errors).length === 0);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name, email, phone, selectedPosition, photo]);
 
-  useEffect(() => {
+  const fetchToken = useCallback(() => {
     setInputErrors({});
     fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
       .then(function(response) {
@@ -142,6 +138,10 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
         setServerError('Network error occurred. Please try again.');
       });
   }, []);
+
+  useEffect(() => {
+    fetchToken();
+  }, [fetchToken]);
 
   return (
     <div className="post-user block" id="sign-up-page" >
@@ -191,14 +191,14 @@ const SignUp = ({ setSuccess, fetchedData, setFetchedData }) => {
           disabled={!isFormValid}
           isLoading={isSending}
         />
-   
+
       </form>
 
       {serverError !== '' && (
         <ServerError
           serverError={serverError}
           setServerError={setServerError}
-          timeOut={5555}
+          showingDurationMS={5555}
         />
       )}
     </div>

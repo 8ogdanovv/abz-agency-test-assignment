@@ -2,16 +2,16 @@ import React from "react";
 import spinner from "../../../assets/spinner.svg";
 import "./Preloader.css";
 
-const Preloader = ({ speed }) => {
+const Preloader = React.memo(({ speedMS }) => {
   const styleBlock = {
-    "--speed": `${speed}ms`,
+    "--speed": `${speedMS}ms`,
   };
 
   return (
-    <div className="spinner-container" style={styleBlock} data-speed={speed}>
+    <div className="spinner-container" style={styleBlock} >
       <img src={spinner} alt="preloader" />
     </div>
   );
-};
+});
 
 export default Preloader;

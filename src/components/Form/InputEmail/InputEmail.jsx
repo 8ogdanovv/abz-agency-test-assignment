@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Input from '../Input/Input';
 import { isValidEmail } from '../../../utils/validate';
 
 const InputEmail = ({ email, setEmail, inputErrors, setInputErrors }) => {
+  const handleEmailChange = useCallback((e) => {
+    setEmail(e.target.value.toLowerCase());
+  }, [setEmail]);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleEmailBlur = () => {
+  const handleEmailBlur = useCallback(() => {
     setInputErrors((prevErrors) => {
       const errors = { ...prevErrors };
 
@@ -22,11 +21,11 @@ const InputEmail = ({ email, setEmail, inputErrors, setInputErrors }) => {
 
       return errors;
     });
-  };
+  }, [email, setInputErrors]);
 
   return (
     <Input
-      name='email'
+      name="email"
       title="Email"
       placeholder="Email"
       hintMessage="email@example.com"
@@ -35,9 +34,9 @@ const InputEmail = ({ email, setEmail, inputErrors, setInputErrors }) => {
       onBlur={handleEmailBlur}
       showError={inputErrors.email}
       errorMessage={inputErrors.email}
-      validate={isValidEmail} // Add the validate prop with the respective validation function
+      validate={isValidEmail}
     />
-  )
-}
+  );
+};
 
-export default InputEmail;
+export default React.memo(InputEmail);

@@ -1,5 +1,5 @@
 import './Users.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import User from '../../Utility/User/User';
 import Button from '../../Utility/Button/Button';
 
@@ -12,10 +12,21 @@ const Users = ({ fetchedData, setFetchedData }) => {
 
   useEffect(() => {
     fetchFirstPage();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchFirstPage = async () => {
+  const isNextPage = useCallback(({ total_pages, page }) => {
+    return total_pages > page;
+  }, []);
+
+  const handleSetNextPage = useCallback((data) => {
+    if (isNextPage(data)) {
+      setNextPageLink(data.links.next_url);
+    } else {
+      setNextPageLink(null);
+    }
+  }, [isNextPage]);
+
+  const fetchFirstPage = useCallback(async () => {
     setIsLoading(true);
 
     try {
@@ -23,17 +34,16 @@ const Users = ({ fetchedData, setFetchedData }) => {
       const data = await response.json();
 
       setFetchedData(data.users);
-      setNextPageLink(data.links.next_url);
+      handleSetNextPage(data);
       setIsFirstPageFetched(true);
-      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [setFetchedData, handleSetNextPage]);
 
-  const fetchNextPage = async () => {
+  const fetchNextPage = useCallback(async () => {
     setIsLoading(true);
 
     try {
@@ -41,20 +51,19 @@ const Users = ({ fetchedData, setFetchedData }) => {
       const data = await response.json();
 
       setFetchedData(prevData => [...prevData, ...data.users]);
-      setNextPageLink(data.links.next_url);
+      handleSetNextPage(data);
     } catch (error) {
       console.error('Error fetching users:', error);
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [nextPageLink, setFetchedData, handleSetNextPage]);
 
-  const handleShowMore = () => {
-    console.log('clicked')
+  const handleShowMore = useCallback(() => {
     if (isFirstPageFetched && nextPageLink) {
       fetchNextPage();
     }
-  };
+  }, [isFirstPageFetched, nextPageLink, fetchNextPage]);
 
   return (
     <div className="section users-flex block" id="users-page">

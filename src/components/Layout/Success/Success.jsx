@@ -3,7 +3,7 @@ import './Success.css';
 
 const Success = () => {
   return (
-    <div className='section success block'>
+    <div className='section success block' id="sign-up-page">
       <p className="text-title">
         User successfully registered
       </p>

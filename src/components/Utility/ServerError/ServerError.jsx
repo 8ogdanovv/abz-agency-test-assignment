@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './ServerError.css';
 
-const ServerError = ({ serverError, setServerError, timeOut }) => {
+const ServerError = ({ serverError, setServerError, showingDurationMS }) => {
 
   useEffect(() => {
     setTimeout(() => {
       setServerError('');
-    }, timeOut);
+    }, showingDurationMS);
   }, []);
 
   return (

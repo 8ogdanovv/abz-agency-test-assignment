@@ -10,7 +10,7 @@ const Button = ({ title, handleClick, disabled, isLoading }) => {
       onClick={handleClick}
       disabled={disabled}
     >
-      {!isLoading ? title : <Preloader speed={400} />}
+      {!isLoading ? title : <Preloader speedMS={400} />}
     </button>
   );
 };

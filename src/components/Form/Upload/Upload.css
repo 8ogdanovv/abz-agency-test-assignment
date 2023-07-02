@@ -43,7 +43,6 @@
   border-left: none;
   display: flex;
   align-items: center;
-  position: relative;
   z-index: 0;
   line-break: anywhere;
   padding-right: 16px;
@@ -51,6 +50,10 @@
 
 .filled {
   color: #000000DE;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 100%;
 }
 
 .error-field {
@@ -133,10 +136,6 @@
     z-index: 0;
     line-break: anywhere;
     padding-right: 16px;
-  }
-
-  .filled {
-    color: #000000DE;
   }
 
   .error-field {

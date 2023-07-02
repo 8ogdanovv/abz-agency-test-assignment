@@ -10,7 +10,7 @@
   border-radius: 50%;
 }
 
-.overflow {
+.--text-overflowed {
   white-space: nowrap;
   overflow: hidden;
   line-height: 90%;
@@ -33,7 +33,7 @@
     width: 90%;
   }
 
-  .overflow {
+  .--text-overflowed {
     max-width: 80vw;
     width: min-content;
   }

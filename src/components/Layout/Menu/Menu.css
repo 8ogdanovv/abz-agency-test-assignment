@@ -46,7 +46,7 @@
   }
 
   p.text-title,
-  p.text-body.overflow {
+  p.text-body.--text-overflowed {
     line-break: anywhere;
     max-width: 80vw;
   }
