@@ -1,18 +1,30 @@
 {
   "files": {
-    "main.css": "/abz-agency-test-assignment/static/css/main.6e461629.css",
-    "main.js": "/abz-agency-test-assignment/static/js/main.255a95cf.js",
+    "main.css": "/abz-agency-test-assignment/static/css/main.b0443664.css",
+    "main.js": "/abz-agency-test-assignment/static/js/main.ab76bbd4.js",
+    "static/css/693.befd2139.chunk.css": "/abz-agency-test-assignment/static/css/693.befd2139.chunk.css",
+    "static/js/693.440eade6.chunk.js": "/abz-agency-test-assignment/static/js/693.440eade6.chunk.js",
+    "static/css/165.b296b289.chunk.css": "/abz-agency-test-assignment/static/css/165.b296b289.chunk.css",
+    "static/js/165.cf5f6855.chunk.js": "/abz-agency-test-assignment/static/js/165.cf5f6855.chunk.js",
+    "static/css/156.8bc4bf1e.chunk.css": "/abz-agency-test-assignment/static/css/156.8bc4bf1e.chunk.css",
+    "static/js/156.c4bed933.chunk.js": "/abz-agency-test-assignment/static/js/156.c4bed933.chunk.js",
     "static/media/header.webp": "/abz-agency-test-assignment/static/media/header.a999ff83fe725051f550.webp",
     "static/media/success.svg": "/abz-agency-test-assignment/static/media/success.7ae50975d9eaef13fe32.svg",
     "static/media/logo.svg": "/abz-agency-test-assignment/static/media/logo.20a09c8680baa0fdd5eeb0e39b457a1a.svg",
     "static/media/defaulUser.svg": "/abz-agency-test-assignment/static/media/defaulUser.b51651e3062922d061aac30f732816f7.svg",
     "static/media/spinner.svg": "/abz-agency-test-assignment/static/media/spinner.6484447065ee95c082e9b52b2a1f2996.svg",
     "index.html": "/abz-agency-test-assignment/index.html",
-    "main.6e461629.css.map": "/abz-agency-test-assignment/static/css/main.6e461629.css.map",
-    "main.255a95cf.js.map": "/abz-agency-test-assignment/static/js/main.255a95cf.js.map"
+    "main.b0443664.css.map": "/abz-agency-test-assignment/static/css/main.b0443664.css.map",
+    "main.ab76bbd4.js.map": "/abz-agency-test-assignment/static/js/main.ab76bbd4.js.map",
+    "693.befd2139.chunk.css.map": "/abz-agency-test-assignment/static/css/693.befd2139.chunk.css.map",
+    "693.440eade6.chunk.js.map": "/abz-agency-test-assignment/static/js/693.440eade6.chunk.js.map",
+    "165.b296b289.chunk.css.map": "/abz-agency-test-assignment/static/css/165.b296b289.chunk.css.map",
+    "165.cf5f6855.chunk.js.map": "/abz-agency-test-assignment/static/js/165.cf5f6855.chunk.js.map",
+    "156.8bc4bf1e.chunk.css.map": "/abz-agency-test-assignment/static/css/156.8bc4bf1e.chunk.css.map",
+    "156.c4bed933.chunk.js.map": "/abz-agency-test-assignment/static/js/156.c4bed933.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e461629.css",
-    "static/js/main.255a95cf.js"
+    "static/css/main.b0443664.css",
+    "static/js/main.ab76bbd4.js"
   ]
 }
